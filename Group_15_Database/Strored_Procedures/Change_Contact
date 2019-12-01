@@ -1,0 +1,5 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Change_Contact`(Contact_ID INT, Tax_ID INT)
+BEGIN
+	UPDATE `Group_15_Project_CRM`.`Client_Company` SET `Primary_Contact_ID` = Contact_ID WHERE (`Tax_ID` = Tax_ID);
+
+END

@@ -1,0 +1,8 @@
+CREATE DEFINER=`root`@`localhost` FUNCTION `Opportunity_Count`(Employee_SSN INT) RETURNS int(11)
+    READS SQL DATA
+    DETERMINISTIC
+BEGIN
+	SET @opp_count = 0;
+	SELECT COUNT(Request_Number) INTO @opp_count FROM Group_15_Project_CRM.Opportunity WHERE Salesman_SSN = Employee_SSN;
+	RETURN @opp_count;
+END
