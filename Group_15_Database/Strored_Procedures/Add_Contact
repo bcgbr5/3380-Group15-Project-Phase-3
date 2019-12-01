@@ -1,0 +1,8 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Add_Contact`(Employer_Tax_ID INT, Fname varchar(25), Mname varchar(25), Lname varchar(25), phone varchar(11), email varchar(45))
+BEGIN
+	INSERT INTO `Group_15_Project_CRM`.`Contact` (`Fname`, `Mname`, `Lname`, `Works_at`) VALUES (Fanme, Mname, Lname, Employer_Tax_ID);
+    SET @Contact_ID = LAST_INSERT_ID();
+    INSERT INTO `Group_15_Project_CRM`.`Contact_Phone` (`contact_id`, `Phone`) VALUES (@Contact_ID, phone);
+	INSERT INTO `Group_15_Project_CRM`.`Contact_Email` (`contact_id`, `Email`) VALUES (@Contact_ID, email);
+
+END

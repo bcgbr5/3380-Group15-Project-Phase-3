@@ -1,0 +1,8 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Create_Quote_For_Item`(Opportunity_Number INT, quote_amount INT, item_description varchar(255))
+BEGIN
+	INSERT INTO `Group_15_Project_CRM`.`Quote` (`Oportunity_Number`, `Amount`) VALUES (Opportunity_Number, quote_amount);
+	INSERT INTO `Group_15_Project_CRM`.`Item` (`Quote_Number`, `Item_Description`) VALUES (last_insert_id(), item_description);
+
+
+
+END

@@ -1,0 +1,9 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Add_Account`(Salesman_SSN INT, Company_Name varchar(45), Address varchar(45), Tax_ID INT, Contact_Fname varchar(25),Contact_Mname varchar(25),Contact_Lname varchar(25),Email varchar(45), phone_number varchar(10))
+BEGIN
+	INSERT INTO `Group_15_Project_CRM`.`Client_Company` (`Tax_ID`, `Name`, `Address`) VALUES (Tax_ID, Company_Name, Address);
+	INSERT INTO `Group_15_Project_CRM`.`Contact` (`Fname`, `Mname`, `Lname`, `Works_at`) VALUES (Fname, Mname, Lname, Tax_ID);
+	SET @Contact_ID = LAST_INSERT_ID();
+	INSERT INTO `Group_15_Project_CRM`.`Contact_Phone` (`contact_id`, `Phone`) VALUES (@Contact_ID, Phone);
+	INSERT INTO `Group_15_Project_CRM`.`Contact_Email` (`contact_id`, `Email`) VALUES (@Contact_ID, Email);
+    UPDATE `Group_15_Project_CRM`.`Client_Company` SET `Primary_Contact_ID` = @Contact_ID WHERE (`Tax_ID` = Tax_ID);
+END

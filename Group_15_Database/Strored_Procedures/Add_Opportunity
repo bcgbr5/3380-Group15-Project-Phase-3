@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Add_Opportunity`(Salesman_SSN INT,Request_Number INT, Opportunity_type varchar(45), Requirments varchar(255))
+BEGIN
+	INSERT INTO `Group_15_Project_CRM`.`Opportunity` (`Salesman_SSN`, `Request_Number`, `Type`, `Requirements`) VALUES (Salesman_SSN, Opportunity_type, Requirments);
+END

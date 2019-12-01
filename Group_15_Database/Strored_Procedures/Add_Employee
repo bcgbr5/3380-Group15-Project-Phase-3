@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Add_Employee`(`Fname` varchar(25), `Mname` varchar(25), `Lname`varchar(25), `SSN` varchar(25), `Email` varchar(50), `Manager_SSN` varchar(25))
+BEGIN
+	INSERT INTO `Group_15_Project_CRM`.`Employee` (`Fname`, `Mname`, `Lname`, `SSN`, `Email`, `Manager_SSN`) VALUES (`Fname`, `Mname`, `Lname`, `SSN`, `Email`, `Manager_SSN`);
+END
