@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Get_Salesman_Phone`(Salesman_SSN varchar(20))
+BEGIN
+	SELECT Phone_Number FROM Group_15_Project_CRM.Employee_Phone WHERE SSN = Salesman_SSN;
+END

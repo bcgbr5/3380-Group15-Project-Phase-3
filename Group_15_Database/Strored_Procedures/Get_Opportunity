@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Get_Opportunities`(tax_id INT)
+BEGIN
+	SELECT Opportunity_Number, Salesman_SSN, Requirements
+	FROM Group_15_Project_CRM.Request_for_proposal 
+	NATURAL JOIN Opportunity 
+	WHERE  Client_Company_Tax_ID = tax_id;
+END

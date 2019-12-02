@@ -1,0 +1,8 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Get_Quote`(Local_Opportunity_Number INT)
+BEGIN
+	SELECT Item_Description, Amount, Description
+    FROM Group_15_Project_CRM.Item
+    NATURAL JOIN Group_15_Project_CRM.Quote
+    NATURAL JOIN Group_15_Project_CRM.Opportunity
+    WHERE Opportunity_Number = Local_Opportunity_Number;
+END

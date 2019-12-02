@@ -1,0 +1,10 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Get_Salesman`(Company_Tax_ID INT)
+BEGIN
+	SELECT Fname, Lname
+    FROM Group_15_Project_CRM.Employee
+    INNER JOIN Group_15_Project_CRM.Account
+    ON Account_Mgr_SSN = SSN
+    INNER JOIN Group_15_Project_CRM.Client_Company
+    ON Client_Company_Tax_ID = Tax_ID
+    WHERE Tax_ID = Company_Tax_ID;
+END
